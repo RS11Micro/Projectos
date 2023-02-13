@@ -1,0 +1,9 @@
+--executar logado no sql com o login do protel(normalmente é proteluser)
+
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TrataContaCBLArtigo]') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+DROP FUNCTION [dbo].[TrataContaCBLArtigo]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TrataContaCBLArtigoPmsOuSys]') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+DROP FUNCTION [dbo].[TrataContaCBLArtigoPmsOuSys]
+GO

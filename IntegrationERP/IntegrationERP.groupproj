@@ -1,0 +1,156 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F2F87D5E-8318-4E01-A213-10CA78232F2B}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\SistemaBase\SBMotorDadosAbs\pkSBMotorDadosAbs.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\SistemaBase\SBSistemaBase\BE\pkBESistemaBase.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\SistemaBase\SBSistemaBase\DS\pkDSSistemaBase.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\SistemaBase\SBSistemaBase\BS\pkBSSistemaBase.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Fontenario SQL\Motor 5.0\BE\pkFntBE50.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Fontenario SQL\Motor 5.0\DS\pkFntDS50.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Fontenario SQL\Motor 5.0\BS\pkFntBS50.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MotorERP\BE\pkERPBE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MotorERP\DS\pkERPDS.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MotorERP\BS\pkERPBS.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IntegrationERP.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="pkSBMotorDadosAbs">
+        <MSBuild Projects="..\SistemaBase\SBMotorDadosAbs\pkSBMotorDadosAbs.dproj"/>
+    </Target>
+    <Target Name="pkSBMotorDadosAbs:Clean">
+        <MSBuild Projects="..\SistemaBase\SBMotorDadosAbs\pkSBMotorDadosAbs.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pkSBMotorDadosAbs:Make">
+        <MSBuild Projects="..\SistemaBase\SBMotorDadosAbs\pkSBMotorDadosAbs.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pkBESistemaBase">
+        <MSBuild Projects="..\SistemaBase\SBSistemaBase\BE\pkBESistemaBase.dproj"/>
+    </Target>
+    <Target Name="pkBESistemaBase:Clean">
+        <MSBuild Projects="..\SistemaBase\SBSistemaBase\BE\pkBESistemaBase.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pkBESistemaBase:Make">
+        <MSBuild Projects="..\SistemaBase\SBSistemaBase\BE\pkBESistemaBase.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pkDSSistemaBase">
+        <MSBuild Projects="..\SistemaBase\SBSistemaBase\DS\pkDSSistemaBase.dproj"/>
+    </Target>
+    <Target Name="pkDSSistemaBase:Clean">
+        <MSBuild Projects="..\SistemaBase\SBSistemaBase\DS\pkDSSistemaBase.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pkDSSistemaBase:Make">
+        <MSBuild Projects="..\SistemaBase\SBSistemaBase\DS\pkDSSistemaBase.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pkBSSistemaBase">
+        <MSBuild Projects="..\SistemaBase\SBSistemaBase\BS\pkBSSistemaBase.dproj"/>
+    </Target>
+    <Target Name="pkBSSistemaBase:Clean">
+        <MSBuild Projects="..\SistemaBase\SBSistemaBase\BS\pkBSSistemaBase.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pkBSSistemaBase:Make">
+        <MSBuild Projects="..\SistemaBase\SBSistemaBase\BS\pkBSSistemaBase.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pkFntBE50">
+        <MSBuild Projects="..\Fontenario SQL\Motor 5.0\BE\pkFntBE50.dproj"/>
+    </Target>
+    <Target Name="pkFntBE50:Clean">
+        <MSBuild Projects="..\Fontenario SQL\Motor 5.0\BE\pkFntBE50.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pkFntBE50:Make">
+        <MSBuild Projects="..\Fontenario SQL\Motor 5.0\BE\pkFntBE50.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pkFntDS50">
+        <MSBuild Projects="..\Fontenario SQL\Motor 5.0\DS\pkFntDS50.dproj"/>
+    </Target>
+    <Target Name="pkFntDS50:Clean">
+        <MSBuild Projects="..\Fontenario SQL\Motor 5.0\DS\pkFntDS50.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pkFntDS50:Make">
+        <MSBuild Projects="..\Fontenario SQL\Motor 5.0\DS\pkFntDS50.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pkFntBS50">
+        <MSBuild Projects="..\Fontenario SQL\Motor 5.0\BS\pkFntBS50.dproj"/>
+    </Target>
+    <Target Name="pkFntBS50:Clean">
+        <MSBuild Projects="..\Fontenario SQL\Motor 5.0\BS\pkFntBS50.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pkFntBS50:Make">
+        <MSBuild Projects="..\Fontenario SQL\Motor 5.0\BS\pkFntBS50.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pkERPBE">
+        <MSBuild Projects="MotorERP\BE\pkERPBE.dproj"/>
+    </Target>
+    <Target Name="pkERPBE:Clean">
+        <MSBuild Projects="MotorERP\BE\pkERPBE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pkERPBE:Make">
+        <MSBuild Projects="MotorERP\BE\pkERPBE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pkERPDS">
+        <MSBuild Projects="MotorERP\DS\pkERPDS.dproj"/>
+    </Target>
+    <Target Name="pkERPDS:Clean">
+        <MSBuild Projects="MotorERP\DS\pkERPDS.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pkERPDS:Make">
+        <MSBuild Projects="MotorERP\DS\pkERPDS.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="pkERPBS">
+        <MSBuild Projects="MotorERP\BS\pkERPBS.dproj"/>
+    </Target>
+    <Target Name="pkERPBS:Clean">
+        <MSBuild Projects="MotorERP\BS\pkERPBS.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="pkERPBS:Make">
+        <MSBuild Projects="MotorERP\BS\pkERPBS.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IntegrationERP">
+        <MSBuild Projects="IntegrationERP.dproj"/>
+    </Target>
+    <Target Name="IntegrationERP:Clean">
+        <MSBuild Projects="IntegrationERP.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IntegrationERP:Make">
+        <MSBuild Projects="IntegrationERP.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="pkSBMotorDadosAbs;pkBESistemaBase;pkDSSistemaBase;pkBSSistemaBase;pkFntBE50;pkFntDS50;pkFntBS50;pkERPBE;pkERPDS;pkERPBS;IntegrationERP"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="pkSBMotorDadosAbs:Clean;pkBESistemaBase:Clean;pkDSSistemaBase:Clean;pkBSSistemaBase:Clean;pkFntBE50:Clean;pkFntDS50:Clean;pkFntBS50:Clean;pkERPBE:Clean;pkERPDS:Clean;pkERPBS:Clean;IntegrationERP:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="pkSBMotorDadosAbs:Make;pkBESistemaBase:Make;pkDSSistemaBase:Make;pkBSSistemaBase:Make;pkFntBE50:Make;pkFntDS50:Make;pkFntBS50:Make;pkERPBE:Make;pkERPDS:Make;pkERPBS:Make;IntegrationERP:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

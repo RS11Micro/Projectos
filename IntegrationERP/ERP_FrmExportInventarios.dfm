@@ -1,0 +1,844 @@
+object FRMERPExportInventarios: TFRMERPExportInventarios
+  Left = 61
+  Top = 156
+  Width = 920
+  Height = 540
+  Caption = 'Exporta'#231#227'o de Inventarios'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object AdvDockPanel1: TAdvDockPanel
+    Left = 815
+    Top = 0
+    Width = 97
+    Height = 506
+    Align = daRight
+    MinimumSize = 3
+    LockHeight = False
+    Persistence.Location = plRegistry
+    Persistence.Enabled = False
+    UseRunTimeHeight = False
+    Version = '5.0.4.6'
+    object AdvToolBar1: TAdvToolBar
+      Left = 1
+      Top = 3
+      Width = 81
+      Height = 500
+      AllowFloating = True
+      CaptionFont.Charset = DEFAULT_CHARSET
+      CaptionFont.Color = clWindowText
+      CaptionFont.Height = -11
+      CaptionFont.Name = 'MS Sans Serif'
+      CaptionFont.Style = []
+      CompactImageIndex = -1
+      FullSize = True
+      TextAutoOptionMenu = 'Add or Remove Buttons'
+      TextOptionMenu = 'Options'
+      ParentOptionPicture = True
+      ToolBarIndex = -1
+      object Btsair: TAdvToolBarButton
+        Left = 2
+        Top = 189
+        Width = 79
+        Height = 56
+        AutoSize = False
+        Appearance.CaptionFont.Charset = DEFAULT_CHARSET
+        Appearance.CaptionFont.Color = clWindowText
+        Appearance.CaptionFont.Height = -11
+        Appearance.CaptionFont.Name = 'MS Sans Serif'
+        Appearance.CaptionFont.Style = []
+        GlyphPosition = gpTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        Position = daBottom
+        ShowCaption = True
+        Version = '5.0.4.6'
+        OnClick = BtsairClick
+      end
+      object BtExportar: TAdvToolBarButton
+        Left = 2
+        Top = 133
+        Width = 79
+        Height = 56
+        AutoSize = False
+        Appearance.CaptionFont.Charset = DEFAULT_CHARSET
+        Appearance.CaptionFont.Color = clWindowText
+        Appearance.CaptionFont.Height = -11
+        Appearance.CaptionFont.Name = 'MS Sans Serif'
+        Appearance.CaptionFont.Style = []
+        GlyphPosition = gpTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        Position = daBottom
+        ShowCaption = True
+        Version = '5.0.4.6'
+        OnClick = BtExportarClick
+      end
+      object tbSepIcons: TAdvToolBarSeparator
+        Left = 2
+        Top = 123
+        Width = 77
+        Height = 10
+        SeparatorStyle = ssBlank
+        LineColor = clBtnShadow
+      end
+      object BtActualizar: TAdvToolBarButton
+        Left = 2
+        Top = 9
+        Width = 79
+        Height = 56
+        AutoSize = False
+        Appearance.CaptionFont.Charset = DEFAULT_CHARSET
+        Appearance.CaptionFont.Color = clWindowText
+        Appearance.CaptionFont.Height = -11
+        Appearance.CaptionFont.Name = 'MS Sans Serif'
+        Appearance.CaptionFont.Style = []
+        GlyphPosition = gpTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        Position = daBottom
+        ShowCaption = True
+        Version = '5.0.4.6'
+        OnClick = BtActualizarClick
+      end
+      object btLimpar: TAdvToolBarButton
+        Left = 2
+        Top = 65
+        Width = 79
+        Height = 56
+        AutoSize = False
+        Appearance.CaptionFont.Charset = DEFAULT_CHARSET
+        Appearance.CaptionFont.Color = clWindowText
+        Appearance.CaptionFont.Height = -11
+        Appearance.CaptionFont.Name = 'MS Sans Serif'
+        Appearance.CaptionFont.Style = []
+        GlyphPosition = gpTop
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        Position = daBottom
+        ShowCaption = True
+        Version = '5.0.4.6'
+        OnClick = btLimparClick
+      end
+      object AdvToolBarSeparator1: TAdvToolBarSeparator
+        Left = 2
+        Top = 121
+        Width = 77
+        Height = 2
+        LineColor = clBtnShadow
+      end
+    end
+  end
+  object AdvPanel1: TAdvPanel
+    Left = 0
+    Top = 0
+    Width = 815
+    Height = 506
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 1
+    UseDockManager = True
+    Version = '2.0.2.0'
+    Caption.Color = clHighlight
+    Caption.ColorTo = clNone
+    Caption.Font.Charset = DEFAULT_CHARSET
+    Caption.Font.Color = clHighlightText
+    Caption.Font.Height = -11
+    Caption.Font.Name = 'MS Sans Serif'
+    Caption.Font.Style = []
+    StatusBar.Font.Charset = DEFAULT_CHARSET
+    StatusBar.Font.Color = clWindowText
+    StatusBar.Font.Height = -11
+    StatusBar.Font.Name = 'Tahoma'
+    StatusBar.Font.Style = []
+    FullHeight = 0
+    object AdvPanel2: TAdvPanel
+      Left = 0
+      Top = 0
+      Width = 815
+      Height = 61
+      Align = alTop
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      UseDockManager = True
+      Version = '2.0.2.0'
+      Caption.Color = clHighlight
+      Caption.ColorTo = clNone
+      Caption.Font.Charset = DEFAULT_CHARSET
+      Caption.Font.Color = clHighlightText
+      Caption.Font.Height = -11
+      Caption.Font.Name = 'Tahoma'
+      Caption.Font.Style = []
+      StatusBar.Font.Charset = DEFAULT_CHARSET
+      StatusBar.Font.Color = clWindowText
+      StatusBar.Font.Height = -11
+      StatusBar.Font.Name = 'Tahoma'
+      StatusBar.Font.Style = []
+      FullHeight = 0
+      object lbsbInicio: TLabel
+        Left = 16
+        Top = 22
+        Width = 55
+        Height = 13
+        Caption = 'Invent'#225'rios'
+        Transparent = True
+      end
+      object edtInventarios: TSBEditProcura
+        Left = 82
+        Top = 21
+        Width = 231
+        Height = 21
+        Enabled = True
+        TabOrder = 0
+        FormatoAntigo = False
+        Obrigatorio = False
+        ReadOnly = True
+        OnBtListaClick = edtInventariosBtListaClick
+        BtListaVisivel = True
+      end
+    end
+    object AdvOfficePager1: TAdvOfficePager
+      Left = 0
+      Top = 61
+      Width = 815
+      Height = 445
+      Align = alClient
+      ActivePage = TssbDocCompras
+      ButtonSettings.CloseButtonPicture.Data = {
+        424DA20400000000000036040000280000000900000009000000010008000000
+        00006C000000C30E0000C30E00000001000000010000427B8400DEEFEF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0001000001010100000100
+        0000000202000100020200000000000202020002020200000000010002020202
+        0200010000000101000202020001010000000100020202020200010000000002
+        0202000202020000000000020200010002020000000001000001010100000100
+        0000}
+      ButtonSettings.PageListButtonPicture.Data = {
+        424DA20400000000000036040000280000000900000009000000010008000000
+        00006C000000C30E0000C30E00000001000000010000427B8400DEEFEF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0001010101000101010100
+        0000010101000200010101000000010100020202000101000000010002020202
+        0200010000000002020200020202000000000002020001000202000000000100
+        0001010100000100000001010101010101010100000001010101010101010100
+        0000}
+      ButtonSettings.ScrollButtonPrevPicture.Data = {
+        424DA20400000000000036040000280000000900000009000000010008000000
+        00006C000000C30E0000C30E00000001000000010000427B8400DEEFEF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0001010101000001010100
+        0000010101000202000101000000010100020202000101000000010002020200
+        0101010000000002020200010101010000000100020202000101010000000101
+        0002020200010100000001010100020200010100000001010101000001010100
+        0000}
+      ButtonSettings.ScrollButtonNextPicture.Data = {
+        424DA20400000000000036040000280000000900000009000000010008000000
+        00006C000000C30E0000C30E00000001000000010000427B8400DEEFEF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0001010000010101010100
+        0000010002020001010101000000010002020200010101000000010100020202
+        0001010000000101010002020200010000000101000202020001010000000100
+        0202020001010100000001000202000101010100000001010000010101010100
+        0000}
+      ButtonSettings.ScrollButtonFirstPicture.Data = {
+        424DC60400000000000036040000280000001000000009000000010008000000
+        000000000000C40E0000C40E00000001000000010000427B84FFDEEFEFFFFFFF
+        FFFF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF01010101010000010101
+        0101000001010101010100020200010101000202000101010100020202000101
+        0002020200010101000202020001010002020200010101000202020001010002
+        0202000101010101000202020001010002020200010101010100020202000101
+        0002020200010101010100020200010101000202000101010101010000010101
+        010100000101}
+      ButtonSettings.ScrollButtonLastPicture.Data = {
+        424DC60400000000000036040000280000001000000009000000010008000000
+        000000000000C40E0000C40E00000001000000010000427B84FFDEEFEFFFFFFF
+        FFFF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+        00FF000000FF000000FF000000FF000000FF000000FF01010000010101010100
+        0001010101010100020200010101000202000101010101000202020001010002
+        0202000101010101000202020001010002020200010101010100020202000101
+        0002020200010101000202020001010002020200010101000202020001010002
+        0202000101010100020200010101000202000101010101010000010101010100
+        000101010101}
+      ButtonSettings.ClosedListButtonPicture.Data = {
+        424DA20400000000000036040000280000000900000009000000010008000000
+        00006C000000C30E0000C30E00000001000000010000427B8400DEEFEF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0001010101000101010100
+        0000010101000200010101000000010100020202000101000000010002020202
+        0200010000000002020200020202000000000002020001000202000000000100
+        0001010100000100000001010101010101010100000001010101010101010100
+        0000}
+      ButtonSettings.CloseButtonHint = 'Close'
+      ButtonSettings.PageListButtonHint = 'Page List'
+      ButtonSettings.ScrollButtonNextHint = 'Next'
+      ButtonSettings.ScrollButtonPrevHint = 'Previous'
+      ButtonSettings.ScrollButtonFirstHint = 'First'
+      ButtonSettings.ScrollButtonLastHint = 'Last'
+      ButtonSettings.ClosedListButtonHint = 'Closed Pages'
+      ShowShortCutHints = False
+      TabOrder = 1
+      NextPictureChanged = False
+      PrevPictureChanged = False
+      object TssbDocCompras: TAdvOfficePage
+        Left = 1
+        Top = 26
+        Width = 813
+        Height = 417
+        Caption = 'Inventario'
+        PageAppearance.BorderColor = 14922381
+        PageAppearance.Color = 16445929
+        PageAppearance.ColorTo = 15587527
+        PageAppearance.ColorMirror = 15587527
+        PageAppearance.ColorMirrorTo = 16773863
+        PageAppearance.Gradient = ggVertical
+        PageAppearance.GradientMirror = ggVertical
+        TabAppearance.BorderColor = clNone
+        TabAppearance.BorderColorHot = 15383705
+        TabAppearance.BorderColorSelected = 14922381
+        TabAppearance.BorderColorSelectedHot = 6343929
+        TabAppearance.BorderColorDisabled = clNone
+        TabAppearance.BorderColorDown = clNone
+        TabAppearance.Color = clBtnFace
+        TabAppearance.ColorTo = clWhite
+        TabAppearance.ColorSelected = 16709360
+        TabAppearance.ColorSelectedTo = 16445929
+        TabAppearance.ColorDisabled = clWhite
+        TabAppearance.ColorDisabledTo = clSilver
+        TabAppearance.ColorHot = 14542308
+        TabAppearance.ColorHotTo = 16768709
+        TabAppearance.ColorMirror = clWhite
+        TabAppearance.ColorMirrorTo = clWhite
+        TabAppearance.ColorMirrorHot = 14016477
+        TabAppearance.ColorMirrorHotTo = 10736609
+        TabAppearance.ColorMirrorSelected = 16445929
+        TabAppearance.ColorMirrorSelectedTo = 16181984
+        TabAppearance.ColorMirrorDisabled = clWhite
+        TabAppearance.ColorMirrorDisabledTo = clSilver
+        TabAppearance.Font.Charset = DEFAULT_CHARSET
+        TabAppearance.Font.Color = clWindowText
+        TabAppearance.Font.Height = -11
+        TabAppearance.Font.Name = 'Tahoma'
+        TabAppearance.Font.Style = []
+        TabAppearance.Gradient = ggVertical
+        TabAppearance.GradientMirror = ggVertical
+        TabAppearance.GradientHot = ggRadial
+        TabAppearance.GradientMirrorHot = ggVertical
+        TabAppearance.GradientSelected = ggVertical
+        TabAppearance.GradientMirrorSelected = ggVertical
+        TabAppearance.GradientDisabled = ggVertical
+        TabAppearance.GradientMirrorDisabled = ggVertical
+        TabAppearance.TextColor = 9126421
+        TabAppearance.TextColorHot = 9126421
+        TabAppearance.TextColorSelected = 9126421
+        TabAppearance.TextColorDisabled = clGray
+        TabAppearance.ShadowColor = 15255470
+        TabAppearance.HighLightColor = 16775871
+        TabAppearance.HighLightColorHot = 16643309
+        TabAppearance.HighLightColorSelected = 6540536
+        TabAppearance.HighLightColorSelectedHot = 12451839
+        TabAppearance.HighLightColorDown = 16776144
+        TabAppearance.BackGround.Color = 16767935
+        TabAppearance.BackGround.ColorTo = clNone
+        TabAppearance.BackGround.Direction = gdHorizontal
+        object GrelhaInventario: TAdvStringGrid
+          Left = 2
+          Top = 2
+          Width = 809
+          Height = 372
+          Cursor = crDefault
+          Align = alClient
+          DefaultRowHeight = 21
+          Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goDrawFocusSelected]
+          ScrollBars = ssBoth
+          TabOrder = 0
+          ActiveCellFont.Charset = DEFAULT_CHARSET
+          ActiveCellFont.Color = clWindowText
+          ActiveCellFont.Height = -11
+          ActiveCellFont.Name = 'Tahoma'
+          ActiveCellFont.Style = [fsBold]
+          ControlLook.FixedGradientHoverFrom = clGray
+          ControlLook.FixedGradientHoverTo = clWhite
+          ControlLook.FixedGradientDownFrom = clGray
+          ControlLook.FixedGradientDownTo = clSilver
+          ControlLook.DropDownHeader.Font.Charset = DEFAULT_CHARSET
+          ControlLook.DropDownHeader.Font.Color = clWindowText
+          ControlLook.DropDownHeader.Font.Height = -11
+          ControlLook.DropDownHeader.Font.Name = 'Tahoma'
+          ControlLook.DropDownHeader.Font.Style = []
+          ControlLook.DropDownHeader.Visible = True
+          ControlLook.DropDownHeader.Buttons = <>
+          ControlLook.DropDownFooter.Font.Charset = DEFAULT_CHARSET
+          ControlLook.DropDownFooter.Font.Color = clWindowText
+          ControlLook.DropDownFooter.Font.Height = -11
+          ControlLook.DropDownFooter.Font.Name = 'MS Sans Serif'
+          ControlLook.DropDownFooter.Font.Style = []
+          ControlLook.DropDownFooter.Visible = True
+          ControlLook.DropDownFooter.Buttons = <>
+          Filter = <>
+          FilterDropDown.Font.Charset = DEFAULT_CHARSET
+          FilterDropDown.Font.Color = clWindowText
+          FilterDropDown.Font.Height = -11
+          FilterDropDown.Font.Name = 'MS Sans Serif'
+          FilterDropDown.Font.Style = []
+          FilterDropDownClear = '(All)'
+          FixedFont.Charset = DEFAULT_CHARSET
+          FixedFont.Color = clWindowText
+          FixedFont.Height = -11
+          FixedFont.Name = 'Tahoma'
+          FixedFont.Style = [fsBold]
+          FloatFormat = '%.4f'
+          PrintSettings.DateFormat = 'dd/mm/yyyy'
+          PrintSettings.Font.Charset = DEFAULT_CHARSET
+          PrintSettings.Font.Color = clWindowText
+          PrintSettings.Font.Height = -11
+          PrintSettings.Font.Name = 'MS Sans Serif'
+          PrintSettings.Font.Style = []
+          PrintSettings.FixedFont.Charset = DEFAULT_CHARSET
+          PrintSettings.FixedFont.Color = clWindowText
+          PrintSettings.FixedFont.Height = -11
+          PrintSettings.FixedFont.Name = 'MS Sans Serif'
+          PrintSettings.FixedFont.Style = []
+          PrintSettings.HeaderFont.Charset = DEFAULT_CHARSET
+          PrintSettings.HeaderFont.Color = clWindowText
+          PrintSettings.HeaderFont.Height = -11
+          PrintSettings.HeaderFont.Name = 'MS Sans Serif'
+          PrintSettings.HeaderFont.Style = []
+          PrintSettings.FooterFont.Charset = DEFAULT_CHARSET
+          PrintSettings.FooterFont.Color = clWindowText
+          PrintSettings.FooterFont.Height = -11
+          PrintSettings.FooterFont.Name = 'MS Sans Serif'
+          PrintSettings.FooterFont.Style = []
+          PrintSettings.PageNumSep = '/'
+          ScrollWidth = 16
+          SearchFooter.FindNextCaption = 'Find next'
+          SearchFooter.FindPrevCaption = 'Find previous'
+          SearchFooter.Font.Charset = DEFAULT_CHARSET
+          SearchFooter.Font.Color = clWindowText
+          SearchFooter.Font.Height = -11
+          SearchFooter.Font.Name = 'MS Sans Serif'
+          SearchFooter.Font.Style = []
+          SearchFooter.HighLightCaption = 'Highlight'
+          SearchFooter.HintClose = 'Close'
+          SearchFooter.HintFindNext = 'Find next occurence'
+          SearchFooter.HintFindPrev = 'Find previous occurence'
+          SearchFooter.HintHighlight = 'Highlight occurences'
+          SearchFooter.MatchCaseCaption = 'Match case'
+          Version = '5.6.2.0'
+          ColWidths = (
+            64
+            64
+            64
+            64
+            64)
+          RowHeights = (
+            21
+            21
+            21
+            21
+            21
+            21
+            21
+            21
+            21
+            21)
+        end
+        object PanelTotVendas: TAdvPanel
+          Left = 2
+          Top = 374
+          Width = 809
+          Height = 41
+          Align = alBottom
+          TabOrder = 1
+          UseDockManager = True
+          Version = '2.0.2.0'
+          Caption.Color = clHighlight
+          Caption.ColorTo = clNone
+          Caption.Font.Charset = DEFAULT_CHARSET
+          Caption.Font.Color = clHighlightText
+          Caption.Font.Height = -11
+          Caption.Font.Name = 'MS Sans Serif'
+          Caption.Font.Style = []
+          StatusBar.Font.Charset = DEFAULT_CHARSET
+          StatusBar.Font.Color = clWindowText
+          StatusBar.Font.Height = -11
+          StatusBar.Font.Name = 'Tahoma'
+          StatusBar.Font.Style = []
+          FullHeight = 0
+          object Label2: TLabel
+            Left = 493
+            Top = 16
+            Width = 74
+            Height = 13
+            Caption = 'Total Inventario'
+            Transparent = True
+            Visible = False
+          end
+          object StTotalCreditos: TStaticText
+            Left = 571
+            Top = 14
+            Width = 86
+            Height = 20
+            Alignment = taRightJustify
+            AutoSize = False
+            BevelInner = bvSpace
+            BevelKind = bkSoft
+            TabOrder = 0
+            Visible = False
+          end
+        end
+      end
+      object tssbImpressao: TAdvOfficePage
+        Left = 1
+        Top = 26
+        Width = 813
+        Height = 417
+        Caption = 'Impress'#227'o'
+        PageAppearance.BorderColor = 14922381
+        PageAppearance.Color = 16445929
+        PageAppearance.ColorTo = 15587527
+        PageAppearance.ColorMirror = 15587527
+        PageAppearance.ColorMirrorTo = 16773863
+        PageAppearance.Gradient = ggVertical
+        PageAppearance.GradientMirror = ggVertical
+        TabVisible = False
+        TabAppearance.BorderColor = clNone
+        TabAppearance.BorderColorHot = 15383705
+        TabAppearance.BorderColorSelected = 14922381
+        TabAppearance.BorderColorSelectedHot = 6343929
+        TabAppearance.BorderColorDisabled = clNone
+        TabAppearance.BorderColorDown = clNone
+        TabAppearance.Color = clBtnFace
+        TabAppearance.ColorTo = clWhite
+        TabAppearance.ColorSelected = 16709360
+        TabAppearance.ColorSelectedTo = 16445929
+        TabAppearance.ColorDisabled = clWhite
+        TabAppearance.ColorDisabledTo = clSilver
+        TabAppearance.ColorHot = 14542308
+        TabAppearance.ColorHotTo = 16768709
+        TabAppearance.ColorMirror = clWhite
+        TabAppearance.ColorMirrorTo = clWhite
+        TabAppearance.ColorMirrorHot = 14016477
+        TabAppearance.ColorMirrorHotTo = 10736609
+        TabAppearance.ColorMirrorSelected = 16445929
+        TabAppearance.ColorMirrorSelectedTo = 16181984
+        TabAppearance.ColorMirrorDisabled = clWhite
+        TabAppearance.ColorMirrorDisabledTo = clSilver
+        TabAppearance.Font.Charset = DEFAULT_CHARSET
+        TabAppearance.Font.Color = clWindowText
+        TabAppearance.Font.Height = -11
+        TabAppearance.Font.Name = 'Tahoma'
+        TabAppearance.Font.Style = []
+        TabAppearance.Gradient = ggVertical
+        TabAppearance.GradientMirror = ggVertical
+        TabAppearance.GradientHot = ggRadial
+        TabAppearance.GradientMirrorHot = ggVertical
+        TabAppearance.GradientSelected = ggVertical
+        TabAppearance.GradientMirrorSelected = ggVertical
+        TabAppearance.GradientDisabled = ggVertical
+        TabAppearance.GradientMirrorDisabled = ggVertical
+        TabAppearance.TextColor = 9126421
+        TabAppearance.TextColorHot = 9126421
+        TabAppearance.TextColorSelected = 9126421
+        TabAppearance.TextColorDisabled = clGray
+        TabAppearance.ShadowColor = 15255470
+        TabAppearance.HighLightColor = 16775871
+        TabAppearance.HighLightColorHot = 16643309
+        TabAppearance.HighLightColorSelected = 6540536
+        TabAppearance.HighLightColorSelectedHot = 12451839
+        TabAppearance.HighLightColorDown = 16776144
+        TabAppearance.BackGround.Color = 16767935
+        TabAppearance.BackGround.ColorTo = clNone
+        TabAppearance.BackGround.Direction = gdHorizontal
+        object GroupBox1: TGroupBox
+          Left = 7
+          Top = 9
+          Width = 516
+          Height = 57
+          TabOrder = 0
+          object LbsbRelatorio: TLabel
+            Left = 11
+            Top = 26
+            Width = 42
+            Height = 13
+            Caption = 'Relat'#243'rio'
+            Transparent = True
+          end
+          object cmbRelatorios: TComboBox
+            Left = 96
+            Top = 22
+            Width = 273
+            Height = 21
+            Style = csDropDownList
+            ItemHeight = 13
+            TabOrder = 0
+          end
+          object cbsbVisualizar: TAdvOfficeCheckBox
+            Left = 389
+            Top = 21
+            Width = 78
+            Height = 20
+            TabOrder = 1
+            Alignment = taRightJustify
+            Caption = 'Visualizar'
+            ReturnIsTab = False
+            Version = '1.3.1.0'
+          end
+        end
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Left = 480
+    Top = 184
+    object Accontrair: TAction
+      Caption = 'Accontrair'
+      ImageIndex = 1
+      OnExecute = AccontrairExecute
+    end
+    object acexpandir: TAction
+      Caption = 'acexpandir'
+      ImageIndex = 0
+      OnExecute = acexpandirExecute
+    end
+  end
+end

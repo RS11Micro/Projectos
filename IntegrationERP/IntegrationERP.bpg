@@ -1,0 +1,52 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = pkSBMotorDadosAbs.bpl pkBESistemaBase.bpl pkDSSistemaBase.bpl \
+  pkBSSistemaBase.bpl pkFntBE50.bpl pkFntDS50.bpl pkFntBS50.bpl pkERPBE.bpl \
+  pkERPDS.bpl pkERPBS.bpl IntegrationERP.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+IntegrationERP.exe: IntegrationERP.dpr
+  $(DCC)
+
+pkBESistemaBase.bpl: ..\SistemaBase\SBSistemaBase\BE\pkBESistemaBase.dpk
+  $(DCC)
+
+pkDSSistemaBase.bpl: ..\SistemaBase\SBSistemaBase\DS\pkDSSistemaBase.dpk
+  $(DCC)
+
+pkBSSistemaBase.bpl: ..\SistemaBase\SBSistemaBase\BS\pkBSSistemaBase.dpk
+  $(DCC)
+
+pkSBMotorDadosAbs.bpl: ..\SistemaBase\SBMotorDadosAbs\pkSBMotorDadosAbs.dpk
+  $(DCC)
+
+pkERPBE.bpl: MotorERP\BE\pkERPBE.dpk
+  $(DCC)
+
+pkERPDS.bpl: MotorERP\DS\pkERPDS.dpk
+  $(DCC)
+
+pkERPBS.bpl: MotorERP\BS\pkERPBS.dpk
+  $(DCC)
+
+pkFntBS50.bpl: ..\Fontenario SQL\Motor 5.0\BS\pkFntBS50.dpk
+  $(DCC)
+
+pkFntDS50.bpl: ..\Fontenario SQL\Motor 5.0\DS\pkFntDS50.dpk
+  $(DCC)
+
+pkFntBE50.bpl: ..\Fontenario SQL\Motor 5.0\BE\pkFntBE50.dpk
+  $(DCC)
+
+

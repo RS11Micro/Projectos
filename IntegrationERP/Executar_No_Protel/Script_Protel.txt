@@ -1,0 +1,94 @@
+--nota:executar logado com o login do sql do protel
+
+IF NOT EXISTS (select sys.columns.name as campo,sys.columns.max_length, 
+sys.objects.name as tabela from sys.columns inner join sys.objects on 
+ sys.columns.object_id=sys.objects.object_id 
+  where sys.columns.name='Id_ProdutoSYS' 
+  and sys.objects.object_id= OBJECT_ID(N'articles') AND type in (N'U')) 
+  alter table articles  add Id_ProdutoSYS integer not null default(-1)
+  
+GO  
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TrataContaCBLArtigo]') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+DROP FUNCTION [dbo].[TrataContaCBLArtigo]
+GO
+CREATE FUNCTION [dbo].[TrataContaCBLArtigo](@Prefixo varchar(10),@ID_Produto varchar(10))
+RETURNS varchar(10)
+BEGIN
+declare 
+@mProduto varchar(10),
+@contador int   
+  set @mProduto=@ID_Produto
+
+  if len(@ID_Produto)>=4
+     set @mProduto=@Prefixo+@mProduto
+  else
+     begin
+        set @contador= len(@ID_Produto)
+        while @contador<4 
+        begin
+           set @mProduto='0'+@mProduto;
+           set @contador=@contador+1
+        end;
+         set @mProduto=@Prefixo+@mProduto
+     end;
+return(@mProduto)
+END
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TrataContaCBLArtigoPmsOuSys]') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+DROP FUNCTION [dbo].[TrataContaCBLArtigoPmsOuSys]
+GO
+CREATE FUNCTION [dbo].[TrataContaCBLArtigoPmsOuSys](@Ref varchar(10),@PrefixoProtel varchar(10) ,@PrefixoSYS varchar(10),@ID_Produto varchar(10))
+RETURNS varchar(10)
+BEGIN
+declare 
+@mProduto varchar(10),
+@contador int  
+ 
+  set @mProduto=@ID_Produto
+  if @Ref='SYS'
+  begin
+	if len(@ID_Produto)>=4
+		 set @mProduto=@PrefixoSYS+@mProduto
+	else
+		 begin
+	        set @contador= len(@ID_Produto)
+		    while @contador<4 
+			begin
+				set @mProduto='0'+@mProduto;
+				set @contador=@contador+1
+			end;
+			set @mProduto=@PrefixoSYS+@mProduto
+     end;
+  end
+  else
+  begin
+	if len(@ID_Produto)>=4
+		 set @mProduto=@PrefixoProtel+@mProduto
+	else
+		 begin
+	        set @contador= len(@ID_Produto)
+		    while @contador<4 
+			begin
+				set @mProduto='0'+@mProduto;
+				set @contador=@contador+1
+			end;
+			set @mProduto=@PrefixoProtel+@mProduto
+     end;
+  
+  end;   
+     
+return(@mProduto)
+END
+GO
+
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[proteluser].[ArticlesPMSSYS]') AND type in (N'U'))
+DROP TABLE [proteluser].[ArticlesPMSSYS]
+GO
+CREATE TABLE [proteluser].[ArticlesPMSSYS](
+	[ref] [int] NOT NULL,
+	[Id_ProdutoSYS] [int] NOT NULL,
+	[gvkonto] [varchar](20) NULL
+) ON [PRIMARY]
+
+GO
