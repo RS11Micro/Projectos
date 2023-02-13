@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{277045EE-FA92-43C5-A706-5DCE611221CE}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="protestegit.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="protestegit">
+        <MSBuild Projects="protestegit.dproj"/>
+    </Target>
+    <Target Name="protestegit:Clean">
+        <MSBuild Projects="protestegit.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="protestegit:Make">
+        <MSBuild Projects="protestegit.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="protestegit"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="protestegit:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="protestegit:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
